@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm7124dd5yq5r"]
+[gd_scene load_steps=12 format=3 uid="uid://cm7124dd5yq5r"]
 
 [ext_resource type="Script" uid="uid://couj0dsi5ckn4" path="res://Cenas/player.gd" id="1_pmvhq"]
 [ext_resource type="Texture2D" uid="uid://d3jwm15et3t22" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/Mario_Small_Idle.png" id="2_iersn"]
+[ext_resource type="Texture2D" uid="uid://bausni6inywyv" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/Mario_Small_Death.png" id="3_ybr15"]
+[ext_resource type="Texture2D" uid="uid://bqfjqbv1vr2oq" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/Mario_Small_Jump.png" id="4_4q8k4"]
+[ext_resource type="Texture2D" uid="uid://b7pkrn5h1n5lm" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/Mario_Small_Run1.png" id="5_2enhl"]
+[ext_resource type="Texture2D" uid="uid://dlhg7nbxeials" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/Mario_Small_Run2.png" id="6_ruciq"]
+[ext_resource type="Texture2D" uid="uid://d01eopk6c4cx1" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/Mario_Small_Run3.png" id="7_yk6xx"]
+[ext_resource type="Texture2D" uid="uid://cal7r48xqmfrt" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/Mario_Small_Slide.png" id="8_bb2x8"]
+[ext_resource type="Script" uid="uid://cn1vbdewvcwsk" path="res://Cenas/animacao.gd" id="9_60xba"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5p0qj"]
 animations = [{
@@ -12,6 +19,44 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ybr15")
+}],
+"loop": true,
+"name": &"small_death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4q8k4")
+}],
+"loop": true,
+"name": &"small_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2enhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ruciq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yk6xx")
+}],
+"loop": true,
+"name": &"small_run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_bb2x8")
+}],
+"loop": true,
+"name": &"small_slide",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yuqgu"]
@@ -21,9 +66,10 @@ size = Vector2(12, 16)
 collision_mask = 2
 script = ExtResource("1_pmvhq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Animacao" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5p0qj")
 animation = &"Idle"
+script = ExtResource("9_60xba")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Colisao" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yuqgu")

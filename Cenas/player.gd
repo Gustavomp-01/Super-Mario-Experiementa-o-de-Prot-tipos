@@ -28,4 +28,6 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0 , speed * delta)
 	
+	$Animacao.trigger_animation(velocity, direction)
+	
 	move_and_slide()
