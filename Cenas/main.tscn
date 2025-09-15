@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://d34wnhpv85lcb"]
+[gd_scene load_steps=12 format=4 uid="uid://d34wnhpv85lcb"]
 
 [ext_resource type="Texture2D" uid="uid://bh2i2pbd72n30" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/GroundBlock.png" id="1_ja1os"]
+[ext_resource type="Script" uid="uid://dfuseaddoel60" path="res://Cenas/enemy.gd" id="1_qns0q"]
 [ext_resource type="Texture2D" uid="uid://8as4lix1a8pr" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/HardBlock.png" id="2_qns0q"]
 [ext_resource type="Texture2D" uid="uid://dbhkvad8kmca" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/UndergroundBlock.png" id="3_n00j1"]
 [ext_resource type="Texture2D" uid="uid://dtkrgfs1x5qrr" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/UndergroundBrick.png" id="4_x6di6"]
@@ -34,6 +35,7 @@ sources/2 = SubResource("TileSetAtlasSource_irhh0")
 sources/3 = SubResource("TileSetAtlasSource_me8gh")
 
 [node name="Main" type="Node"]
+script = ExtResource("1_qns0q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.75, 2.75)
