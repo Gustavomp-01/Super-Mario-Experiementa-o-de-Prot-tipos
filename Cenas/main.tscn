@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://d34wnhpv85lcb"]
+[gd_scene load_steps=14 format=4 uid="uid://d34wnhpv85lcb"]
 
 [ext_resource type="Texture2D" uid="uid://bh2i2pbd72n30" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/GroundBlock.png" id="1_ja1os"]
 [ext_resource type="Script" uid="uid://dfuseaddoel60" path="res://Cenas/enemy.gd" id="1_qns0q"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dbhkvad8kmca" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/UndergroundBlock.png" id="3_n00j1"]
 [ext_resource type="Texture2D" uid="uid://dtkrgfs1x5qrr" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/UndergroundBrick.png" id="4_x6di6"]
 [ext_resource type="PackedScene" uid="uid://cm7124dd5yq5r" path="res://Cenas/player.tscn" id="5_btbr3"]
+[ext_resource type="PackedScene" uid="uid://ckwi71gp2n8op" path="res://Cenas/goomba.tscn" id="7_x6di6"]
+[ext_resource type="PackedScene" uid="uid://bflu5hnldc02o" path="res://Cenas/koopa.tscn" id="8_btbr3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjrtw"]
 texture = ExtResource("1_ja1os")
@@ -46,3 +48,11 @@ tile_set = SubResource("TileSet_330ga")
 
 [node name="Player" parent="." instance=ExtResource("5_btbr3")]
 position = Vector2(-200, 57)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Goomba" parent="Enemies" instance=ExtResource("7_x6di6")]
+position = Vector2(139, 56)
+
+[node name="Koopa" parent="Enemies" instance=ExtResource("8_btbr3")]
+position = Vector2(14, 53)
