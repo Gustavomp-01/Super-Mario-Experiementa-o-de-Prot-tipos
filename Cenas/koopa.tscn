@@ -13,7 +13,7 @@ animations = [{
 "texture": ExtResource("1_xcbc3")
 }],
 "loop": true,
-"name": &"Dead",
+"name": &"dead",
 "speed": 5.0
 }, {
 "frames": [{
@@ -24,7 +24,7 @@ animations = [{
 "texture": ExtResource("3_fkhfp")
 }],
 "loop": true,
-"name": &"Walk",
+"name": &"walk",
 "speed": 5.0
 }]
 
@@ -35,8 +35,8 @@ script = ExtResource("1_amv0p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_21s2i")
-animation = &"Walk"
-autoplay = "Walk"
+animation = &"walk"
+autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

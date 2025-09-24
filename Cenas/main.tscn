@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=4 uid="uid://d34wnhpv85lcb"]
 
 [ext_resource type="Texture2D" uid="uid://bh2i2pbd72n30" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/GroundBlock.png" id="1_ja1os"]
-[ext_resource type="Script" uid="uid://dfuseaddoel60" path="res://Cenas/enemy.gd" id="1_qns0q"]
 [ext_resource type="Texture2D" uid="uid://8as4lix1a8pr" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/HardBlock.png" id="2_qns0q"]
 [ext_resource type="Texture2D" uid="uid://dbhkvad8kmca" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/UndergroundBlock.png" id="3_n00j1"]
 [ext_resource type="Texture2D" uid="uid://dtkrgfs1x5qrr" path="res://Assets Super Mario Bros/Assets Super Mario Bros/Sprites/UndergroundBrick.png" id="4_x6di6"]
 [ext_resource type="PackedScene" uid="uid://cm7124dd5yq5r" path="res://Cenas/player.tscn" id="5_btbr3"]
 [ext_resource type="PackedScene" uid="uid://ckwi71gp2n8op" path="res://Cenas/goomba.tscn" id="7_x6di6"]
 [ext_resource type="PackedScene" uid="uid://bflu5hnldc02o" path="res://Cenas/koopa.tscn" id="8_btbr3"]
+[ext_resource type="PackedScene" uid="uid://b3w8p7ert7qnj" path="res://Cenas/menu.tscn" id="8_x6di6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjrtw"]
 texture = ExtResource("1_ja1os")
@@ -37,10 +37,6 @@ sources/2 = SubResource("TileSetAtlasSource_irhh0")
 sources/3 = SubResource("TileSetAtlasSource_me8gh")
 
 [node name="Main" type="Node"]
-script = ExtResource("1_qns0q")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.75, 2.75)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAMAAQAAAAAAAAAAAALAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAD7/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAD6/wQAAAAAAAAAAAD5/wQAAAAAAAAAAAD4/wQAAAAAAAAAAAD3/wQAAAAAAAAAAAD2/wQAAAAAAAAAAAD1/wQAAAAAAAAAAAD0/wQAAAAAAAAAAADz/wQAAAAAAAAAAADy/wQAAAAAAAAAAAANAAQAAAAAAAAAAAANAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAADAAUAAAAAAAAAAAACAAUAAAAAAAAAAAABAAUAAAAAAAAAAAAAAAUAAAAAAAAAAAD//wUAAAAAAAAAAAD+/wUAAAAAAAAAAAD9/wUAAAAAAAAAAAD8/wUAAAAAAAAAAAD7/wUAAAAAAAAAAAD6/wUAAAAAAAAAAAD5/wUAAAAAAAAAAAD4/wUAAAAAAAAAAAD3/wUAAAAAAAAAAAD2/wUAAAAAAAAAAAD1/wUAAAAAAAAAAAD0/wUAAAAAAAAAAADz/wUAAAAAAAAAAADy/wUAAAAAAAAAAADy/wYAAAAAAAAAAADz/wYAAAAAAAAAAAD0/wYAAAAAAAAAAAD1/wYAAAAAAAAAAAD2/wcAAAAAAAAAAAD3/wcAAAAAAAAAAAD4/wcAAAAAAAAAAAD5/wcAAAAAAAAAAAD6/wcAAAAAAAAAAAD7/wcAAAAAAAAAAAD8/wYAAAAAAAAAAAD7/wYAAAAAAAAAAAD6/wYAAAAAAAAAAAD5/wYAAAAAAAAAAAD4/wYAAAAAAAAAAAD3/wYAAAAAAAAAAAD2/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAANAAYAAAAAAAAAAADy/wcAAAAAAAAAAADz/wcAAAAAAAAAAAD0/wcAAAAAAAAAAAD1/wcAAAAAAAAAAAD8/wcAAAAAAAAAAAD9/wcAAAAAAAAAAAD+/wcAAAAAAAAAAAD//wcAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAAAAAAAAAA=")
@@ -49,6 +45,10 @@ tile_set = SubResource("TileSet_330ga")
 [node name="Player" parent="." instance=ExtResource("5_btbr3")]
 position = Vector2(-200, 57)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(200, -57)
+zoom = Vector2(2.75, 2.75)
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Goomba" parent="Enemies" instance=ExtResource("7_x6di6")]
@@ -56,3 +56,5 @@ position = Vector2(139, 56)
 
 [node name="Koopa" parent="Enemies" instance=ExtResource("8_btbr3")]
 position = Vector2(14, 53)
+
+[node name="Menu" parent="." instance=ExtResource("8_x6di6")]
